@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 5001;
 // Mongodb connection middleware would go here
 connectDB();
 
-app.use(express.json());
+app.use(express.json()); // this middleware will parse JSON bodies reqs
+
 app.use("/api/notes", notesRoutes);
 
 app.listen(PORT, () => {
